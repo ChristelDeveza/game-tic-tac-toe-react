@@ -1,0 +1,12 @@
+tr {
+display: flex;
+flex-direction: row;
+}
+
+td {
+  border: 1px solid black ;
+  width: 100px;
+  height: 100px;
+  font-size: xx-large;
+  font-weight: bolder;
+}
