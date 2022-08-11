@@ -16,8 +16,11 @@ function Grid() {
 
   return (
     <div>
+      <button className='btn-restart' onClick={() => startAgain()}>
+        Rejouer
+      </button>
       <table>
-        Joueur : {game}
+        <p className='player'>Joueur : {game}</p>
         <tbody>
           <tr>
             <Cell
@@ -128,14 +131,23 @@ function Grid() {
       </table>
       {winner && (
         <div>
-          <p>{winner} a gagné !</p>
+          <p className='win'>{winner} a gagné !</p>
         </div>
       )}
-      {!winner && lose && fillCell[0] && fillCell[1] && fillCell[2] && fillCell[3] && fillCell[4] && fillCell[5] && fillCell[6] && fillCell[7] && fillCell[8] && (<div>Désolé, perdu !</div>)}
-
-      <button className='btn-restart' onClick={() => startAgain()}>
-        Rejouer
-      </button>
+      {!winner &&
+        fillCell[0] &&
+        fillCell[1] &&
+        fillCell[2] &&
+        fillCell[3] &&
+        fillCell[4] &&
+        fillCell[5] &&
+        fillCell[6] &&
+        fillCell[7] &&
+        fillCell[8] && (
+          <div>
+            <p className='win'>Désolé, perdu !</p>
+          </div>
+        )}
     </div>
   );
 }

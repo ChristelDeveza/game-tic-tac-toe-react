@@ -4,9 +4,24 @@ flex-direction: row;
 }
 
 td {
-  border: 1px solid black ;
-  width: 100px;
-  height: 100px;
-  font-size: xx-large;
+  background-color: rgb(197, 220, 220);
+  border: 2px solid black ;
+  width: 120px;
+  height: 80px;
+  font-size: 60px;
   font-weight: bolder;
+  padding-top: 3rem;
+}
+
+.btn-restart {
+  background-color: rgb(162, 209, 209);
+  font-weight: bolder;
+}
+
+.player {
+  font-size: x-large;
+}
+
+.win {
+  font-size: x-large;
 }
