@@ -131,7 +131,7 @@ function Grid() {
           <p>{winner} a gagné !</p>
         </div>
       )}
-      {lose && fillCell[1] && fillCell[2] && fillCell[3] && fillCell[4] && fillCell[5] && fillCell[6] && fillCell[7] && fillCell[8] && (<div>Désolé, perdu !</div>)}
+      {!winner && lose && fillCell[0] && fillCell[1] && fillCell[2] && fillCell[3] && fillCell[4] && fillCell[5] && fillCell[6] && fillCell[7] && fillCell[8] && (<div>Désolé, perdu !</div>)}
 
       <button className='btn-restart' onClick={() => startAgain()}>
         Rejouer
