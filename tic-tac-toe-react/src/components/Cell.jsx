@@ -1,6 +1,15 @@
 import React, { useState } from 'react';
 
-function Cell({ number, game, setGame, fillCell, setFillCell, setWinner }) {
+function Cell({
+  number,
+  game,
+  setGame,
+  fillCell,
+  setFillCell,
+  setWinner,
+  lose,
+  setLose,
+}) {
   function win(cells) {
     let winCombinaisons = {
       line: [
@@ -21,7 +30,6 @@ function Cell({ number, game, setGame, fillCell, setFillCell, setWinner }) {
 
     for (let winCombinaison in winCombinaisons) {
       winCombinaisons[winCombinaison].forEach((element) => {
-        console.log(element);
         if (
           cells[element[0]] === '' ||
           cells[element[1]] === '' ||
@@ -35,9 +43,13 @@ function Cell({ number, game, setGame, fillCell, setFillCell, setWinner }) {
         ) {
           console.log('gagné');
           setWinner(cells[element[0]]);
-        } else if(cells[element[0]] !== cells[element[1]] && cells[element[1]] !== cells[element[2]] ) {
+        } else if (
+          cells[element[0]] &&
+          cells[element[1]] &&
+          cells[element[2]]
+        ) {
           console.log('perdu');
-         
+          setLose(!lose);
         }
       });
     }

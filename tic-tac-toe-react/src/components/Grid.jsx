@@ -6,7 +6,9 @@ function Grid() {
   const [game, setGame] = useState('X');
   const [fillCell, setFillCell] = useState(Array(9).fill(''));
   const [winner, setWinner] = useState();
- console.log(fillCell)
+  const [lose, setLose] = useState(false);
+
+  console.log(fillCell);
   function startAgain() {
     setWinner(null);
     setFillCell(Array(9).fill(''));
@@ -26,6 +28,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
             <Cell
               number={1}
@@ -35,6 +39,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
             <Cell
               number={2}
@@ -44,6 +50,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
           </tr>
           <tr>
@@ -55,6 +63,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
             <Cell
               number={4}
@@ -64,6 +74,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
             <Cell
               number={5}
@@ -73,6 +85,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
           </tr>
           <tr>
@@ -84,6 +98,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
             <Cell
               number={7}
@@ -93,6 +109,8 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
             <Cell
               number={8}
@@ -102,19 +120,22 @@ function Grid() {
               setFillCell={setFillCell}
               winner={winner}
               setWinner={setWinner}
+              lose={lose}
+              setLose={setLose}
             />
           </tr>
         </tbody>
       </table>
       {winner && (
         <div>
-          {' '}
           <p>{winner} a gagné !</p>
-          <button className='btn-restart' onClick={() => startAgain()}>
-            Rejouer
-          </button>
         </div>
       )}
+      {lose && fillCell[1] && fillCell[2] && fillCell[3] && fillCell[4] && fillCell[5] && fillCell[6] && fillCell[7] && fillCell[8] && (<div>Désolé, perdu !</div>)}
+
+      <button className='btn-restart' onClick={() => startAgain()}>
+        Rejouer
+      </button>
     </div>
   );
 }
